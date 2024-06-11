@@ -8,7 +8,8 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const path = require("path");
 
-const authController = require("./controllers/auth.js");
+// const authController = require("./controllers/auth.js"); // made routes for auth
+const authRoutes = require("./routes/auth.js");
 
 const port = process.env.PORT ? process.env.PORT : "3000";
 
@@ -20,6 +21,16 @@ mongoose.connection.on("connected", () => {
 app.use(express.urlencoded({ extended: false })); // midware to parse url data from forms
 app.use(methodOverride("_method")); // midware for using http verbs such as PUT or DELETE
 app.use(morgan("dev")); // morgan for http requests
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
+// app.use(
+//     session({
+//       secret: process.env.SESSION_SECRET,
+//       resave: false,
+//       saveUninitialized: true,
+//       })
+//   );
+  
 
 app.get("/", async (req, res) => {
   res.render("home.ejs");
@@ -27,7 +38,7 @@ app.get("/", async (req, res) => {
 
 
 
-app.use("/auth", authController);
+app.use("/auth", authRoutes);
 
 
 
