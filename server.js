@@ -15,13 +15,13 @@ mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
-app.get('/', async (req, res) => {
-    res.send('Hello Home Page')
-})
+app.use(express.urlencoded({ extended: false })); // midware to parse url data from forms
+app.use(methodOverride("_method")); // midware for using http verbs such as PUT or DELETE
+app.use(morgan("dev")); // morgan for http requests
 
-
-
-
+app.get("/", async (req, res) => {
+  res.send("Hello Home Page");
+});
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
