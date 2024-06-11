@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false })); // midware to parse url data f
 app.use(methodOverride("_method")); // midware for using http verbs such as PUT or DELETE
 app.use(morgan("dev")); // morgan for http requests
 app.set("views", path.join(__dirname, "views"));
-app.set("view engine", "ejs");
+// app.set("view engine", "ejs"); // do i need? no?
 // app.use(
 //     session({
 //       secret: process.env.SESSION_SECRET,
