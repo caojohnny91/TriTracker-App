@@ -30,7 +30,16 @@ const signUpPost = async (req, res) => {
   }
 };
 
+const signIn = async (req, res) => {
+    try {
+        res.render("auth/sign-in.ejs")
+    } catch(error){
+        res.redirect("/")
+    }
+}
+
 module.exports = {
   signUp,
   signUpPost,
+  signIn,
 };
