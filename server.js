@@ -8,6 +8,8 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const path = require("path");
 
+const authController = require("./controllers/auth.js");
+
 const port = process.env.PORT ? process.env.PORT : "3000";
 
 mongoose.connect(process.env.MONGODB_URI);
@@ -20,8 +22,22 @@ app.use(methodOverride("_method")); // midware for using http verbs such as PUT 
 app.use(morgan("dev")); // morgan for http requests
 
 app.get("/", async (req, res) => {
-  res.send("Hello Home Page");
+  res.render("home.ejs");
 });
+
+
+
+app.use("/auth", authController);
+
+
+
+
+
+
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
