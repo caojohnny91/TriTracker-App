@@ -8,6 +8,8 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const path = require("path");
 
+// const workoutsController = require("./routes/workouts.js"); need to app.use?
+
 // const authController = require("./controllers/auth.js"); // made routes for auth
 const authRoutes = require("./routes/auth.js");
 
