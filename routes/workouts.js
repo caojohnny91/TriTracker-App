@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../models/user.js");
 
-const workoutsController = require("../controllers/auth/workouts");
+const workoutsController = require("../controllers/workouts");
 
 router.get("/index", workoutsController.index);
 

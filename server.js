@@ -12,6 +12,7 @@ const path = require("path");
 
 // const authController = require("./controllers/auth.js"); // made routes for auth
 const authRoutes = require("./routes/auth.js");
+const workoutsController = require("./routes/workouts.js")
 
 const port = process.env.PORT ? process.env.PORT : "3000";
 
@@ -33,11 +34,17 @@ app.use(
 app.set("views", path.join(__dirname, "views"));
 // app.set("view engine", "ejs"); // do i need? no?
 
+
+
+
 app.get("/", async (req, res) => {
   res.render("home.ejs", { user: req.session.user });
 });
 
 app.use("/auth", authRoutes);
+
+app.use("/users/workouts", workoutsController)
+// app.use("/users/:userId/workouts", workoutsController);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
