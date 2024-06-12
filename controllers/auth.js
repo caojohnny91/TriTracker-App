@@ -31,15 +31,36 @@ const signUpPost = async (req, res) => {
 };
 
 const signIn = async (req, res) => {
-    try {
-        res.render("auth/sign-in.ejs")
-    } catch(error){
-        res.redirect("/")
+  try {
+    res.render("auth/sign-in.ejs");
+  } catch (error) {
+    res.redirect("/");
+  }
+};
+
+const signInPost = async (req, res) => {
+  try {
+    const userInDatabase = await User.findOne({ username: req.body.username });
+    if (!userInDatabase) {
+      return res.send("Login failed! Please try again.");
     }
-}
+    const validPassword = bcrypt.compareSync(
+      req.body.password,
+      userInDatabase.password
+    );
+    if (!validPassword) {
+      res.send("Login failed! Please try again.");
+    }
+    res.send("Request to sign in recieved!");
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+};
 
 module.exports = {
   signUp,
   signUpPost,
   signIn,
+  signInPost,
 };
