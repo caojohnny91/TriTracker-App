@@ -6,13 +6,15 @@ const session = require("express-session");
 const methodOverride = require("method-override");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
+const isSignedIn = require("./middleware/is-signed-in.js");
+const passUserToView = require("./middleware/pass-user-to-view.js");
 const path = require("path");
 
 // const workoutsController = require("./routes/workouts.js"); need to app.use?
 
 // const authController = require("./controllers/auth.js"); // made routes for auth
 const authRoutes = require("./routes/auth.js");
-const workoutsController = require("./routes/workouts.js")
+const workoutsController = require("./routes/workouts.js");
 
 const port = process.env.PORT ? process.env.PORT : "3000";
 
@@ -33,18 +35,21 @@ app.use(
 );
 app.set("views", path.join(__dirname, "views"));
 // app.set("view engine", "ejs"); // do i need? no?
+app.use(passUserToView);
 
-
-
-
-app.get("/", async (req, res) => {
-  res.render("home.ejs", { user: req.session.user });
+app.get("/", (req, res) => {
+  if (req.session.user) {
+    res.redirect(`/users/${req.session.user._id}/workouts`);
+  } else {
+    res.render("home.ejs");
+  }
 });
 
 app.use("/auth", authRoutes);
+app.use(isSignedIn);
 
-app.use("/users/workouts", workoutsController)
-// app.use("/users/:userId/workouts", workoutsController);
+// app.use("/users/workouts", workoutsController); // old before is-signed/pass middleware
+app.use("/users/:userId/workouts", workoutsController);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);

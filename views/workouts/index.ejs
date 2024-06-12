@@ -1,19 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Index Page</title>
-</head>
-<body>
-    <% if (user) {%>
-      <%- include("partials/_navbar.ejs") %>
-      <a href="/">Home</a>
-    <h1><%= user.username %>, welcome to your workouts</h1> <br>
-    <% } else {%>
-      <h1>Welcome to TriTracker!</h1> <br>
-      <h3>Your Triathlon Workout Tracking App</h3>
-      <% } %>
+  </head>
+  <body>
+    <h1>Welcome to your Workouts Index Page!</h1>
+    <br />
     <h3>SWIM BIKE RUN</h3>
     <!-- insert pics for swim, bike, run -->
   </body>

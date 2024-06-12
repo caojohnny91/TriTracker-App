@@ -3,6 +3,6 @@ const router = express.Router();
 
 const workoutsController = require("../controllers/workouts");
 
-router.get("/index", workoutsController.index);
+router.get("/", workoutsController.index);
 
 module.exports = router;
