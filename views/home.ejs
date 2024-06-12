@@ -6,8 +6,13 @@
     <title>Home Page</title>
   </head>
   <body>
-    <h1>Welcome to TriTracker!</h1>
+    <% if (user) {%>
+    <h1><%= user.username %>, welcome to TriTracker!</h1> <br>
     <h3>Your Triathlon Workout Tracking App</h3>
+    <% } else {%>
+      <h1>Welcome to TriTracker!</h1> <br>
+      <h3>Your Triathlon Workout Tracking App</h3>
+      <% } %>
     <h3>SWIM BIKE RUN</h3>
     <!-- insert pics for swim, bike, run -->
      <a href="/auth/sign-up">Sign Up</a>

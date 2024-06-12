@@ -51,7 +51,10 @@ const signInPost = async (req, res) => {
     if (!validPassword) {
       res.send("Login failed! Please try again.");
     }
-    res.send("Request to sign in recieved!");
+    req.session.user = {
+      username: userInDatabase.username,
+    };
+    res.redirect("/");
   } catch (error) {
     console.log(error);
     res.redirect("/");
