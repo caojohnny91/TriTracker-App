@@ -7,6 +7,7 @@
   </head>
   <body>
     <% if (user) {%>
+      <%- include("partials/_navbar.ejs") %>
     <h1><%= user.username %>, welcome to TriTracker!</h1> <br>
     <h3>Your Triathlon Workout Tracking App</h3>
     <% } else {%>
