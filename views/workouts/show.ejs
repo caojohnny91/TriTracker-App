@@ -1,0 +1,36 @@
+<!-- views/applications/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= workout.date %></title>
+</head>
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <!-- fix date render -->
+  <h1><%= workout.discipline %> on <%= workout.date %></h1>
+  Type: <%= workout.workoutType %> <br />
+
+  <% if (workout.time) { %>
+    <% if (workout.time > 1) { %>
+      Time: <%= workout.time %> minutes<br />
+    <% } else if (workout.time === 1) { %>
+      Time: <%= workout.time %> minute<br />
+    <% } %>
+  <% } %>
+
+  <% if (workout.distance) { %>
+    <% if (workout.distance > 1) { %>
+      Distance: <%= workout.distance %> miles<br />
+    <% } else if (workout.distance === 1) { %>
+      Distance: <%= workout.distance %> mile<br />
+    <% } %>
+  <% } %>
+
+  <% if (workout.notes) { %>
+    Notes: "<%= workout.notes %>"<br />
+  <% } %>
+</body>
+</html>

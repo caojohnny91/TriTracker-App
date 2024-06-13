@@ -10,7 +10,7 @@
     <h1>Add a New Workout</h1>
     <form action="/users/<%= user._id %>/workouts" method="POST">
       <label for="date">Date:</label>
-      <input type="date" name="date" required />
+      <input type="currentdate" name="date" required />
 
       <label for="discipline">Discipline:</label>
       <select name="discipline" required>

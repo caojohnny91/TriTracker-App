@@ -9,4 +9,6 @@ router.get("/new", workoutsController.newPage);
 
 router.post("/", workoutsController.create);
 
+router.get("/:workoutId", workoutsController.show);
+
 module.exports = router;
