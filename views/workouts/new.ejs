@@ -1,12 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Add a New Workout</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a New Workout</title>
+  </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add a New Workout</h1>
+    <form action="" mehtod="POST">
+      <label for="date">Date:</label>
+      <input type="date" name="date" required />
+
+      <label for="discipline">Discipline:</label>
+      <select name="discipline" required>
+        <option value="Swim">Swim</option>
+        <option value="Bike">Bike</option>
+        <option value="Run">Run</option>
+      </select>
+
+      <label for="workoutType">Workout Type:</label>
+      <select name="workoutType" required>
+        <option value="Recovery">Recovery</option>
+        <option value="Zone 2">Zone 2</option>
+        <option value="Tempo">Tempo</option>
+        <option value="Interval">Interval</option>
+      </select>
+
+      <label for="time">Time (minutes):</label>
+      <input type="number" name="time" min="0"/>
+
+      <label for="distance">Distance (miles):</label>
+      <input type="number" name="distance" min="0"/>
+
+      <label for="notes">Notes:</label>
+      <textarea name="notes" maxlength="50"></textarea>
+
+      <button type="submit">Add Workout</button>
+    </form>
   </body>
 </html>
