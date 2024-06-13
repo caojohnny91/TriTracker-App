@@ -8,7 +8,7 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add a New Workout</h1>
-    <form action="" mehtod="POST">
+    <form action="/users/<%= user._id %>/workouts" mehtod="POST">
       <label for="date">Date:</label>
       <input type="date" name="date" required />
 

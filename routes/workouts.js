@@ -7,4 +7,6 @@ router.get("/", workoutsController.index);
 
 router.get("/new", workoutsController.newPage);
 
+router.post("/", workoutsController.create);
+
 module.exports = router;

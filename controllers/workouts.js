@@ -17,7 +17,20 @@ const newPage = async (req, res) => {
       }
 };
 
+const create = async (req, res) => {
+    try {
+        const currentUser = await User.findById(req.session.user._id);
+        currentUser.triathlon.push(req.body);
+        await currentUser.save();
+        res.redirect(`/users/${currentUser._id}/workouts`)
+    } catch (error) {
+        console.log(error);
+        res.redirect("/");
+    }
+}
+
 module.exports = {
   index,
   newPage,
+  create,
 };
