@@ -9,9 +9,40 @@
     <%- include('../partials/_navbar.ejs') %>
 
     <a href="/users/<%=user._id%>/workouts/new">Add New Workout</a>
-    <h1>Welcome to your Workouts Index Page!</h1>
-    <br />
+    <h1>Welcome to My Workouts Index Page!</h1>
     <h3>SWIM BIKE RUN</h3>
     <!-- insert pics for swim, bike, run -->
+    <% if (triathlon.length > 0) { %>
+    <ul>
+      <% triathlon.forEach((workout) => { %>
+      <li>
+        <a href="/users/<%=user._id%>/workouts/<%=workout._id%>"
+          >Discipline: <%=workout.discipline%><br />
+        </a>
+        <!-- fix time and distance conditions -->
+        Type: <%=workout.workoutType%><br />
+        <% if(workout.time !== "") {%>
+            <% if(workout.time > 1) { %> 
+                Time: <%=workout.time%> minutes
+                <% } else { %>
+            Time: <%=workout.time%> minute%>
+            <% } %>
+        <% } %><br />
+        <% if(workout.distance !== "") {%>
+            <% if(workout.distance > 1) {%> 
+            Distance: <%=workout.distance%> miles 
+            <% } else { %> 
+                Distance: <%=workout.distance%> mile
+            <% } %>
+            <% } %><br />
+            <% if(workout.notes !== "") {%>
+        Notes: "<%=workout.notes%>"
+        <% } %>
+      </li>
+      <% }); %>
+    </ul>
+    <% } else { %>
+    <p>You have no workouts!</p>
+    <% } %>
   </body>
 </html>

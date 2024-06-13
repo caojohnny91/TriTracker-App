@@ -8,7 +8,7 @@
   <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Add a New Workout</h1>
-    <form action="/users/<%= user._id %>/workouts" mehtod="POST">
+    <form action="/users/<%= user._id %>/workouts" method="POST">
       <label for="date">Date:</label>
       <input type="date" name="date" required />
 
@@ -28,10 +28,10 @@
       </select>
 
       <label for="time">Time (minutes):</label>
-      <input type="number" name="time" min="0"/>
+      <input type="number" name="time" step="0.001" min="0" />
 
       <label for="distance">Distance (miles):</label>
-      <input type="number" name="distance" min="0"/>
+      <input type="number" name="distance" step="0.001" min="0" />
 
       <label for="notes">Notes:</label>
       <textarea name="notes" maxlength="50"></textarea>

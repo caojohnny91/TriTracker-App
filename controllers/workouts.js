@@ -2,7 +2,8 @@ const User = require("../models/user");
 
 const index = async (req, res) => {
   try {
-    res.render("workouts/index.ejs");
+    const currentUser = await User.findById(req.session.user._id);
+    res.render("workouts/index.ejs", { triathlon: currentUser.triathlon });
   } catch (error) {
     console.log(error);
     res.redirect("/");
