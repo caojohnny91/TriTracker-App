@@ -13,4 +13,6 @@ router.get("/:workoutId", workoutsController.show);
 
 router.delete("/:workoutId", workoutsController.deleteWorkout);
 
+router.get("/:workoutId/edit", workoutsController.edit);
+
 module.exports = router;

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Index Page</title>
+    <title>My Workouts</title>
   </head>
   <body>
     <%- include('../partials/_navbar.ejs') %>
@@ -18,7 +18,7 @@
             <li>
                 <!-- need yo fix date display -->
               <a href="/users/<%= user._id %>/workouts/<%= workout._id %>">
-                Date: <%= workout.date %> Discipline: <%= workout.discipline %><br />
+                Date: <%= workout.date.toString().slice(0, 15) %> Discipline: <%= workout.discipline %><br />
               </a>
               Type: <%= workout.workoutType %><br />
       
