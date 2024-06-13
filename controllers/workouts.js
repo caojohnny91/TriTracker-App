@@ -8,15 +8,16 @@ const index = async (req, res) => {
     res.redirect("/");
   }
 };
-// const index = async (req, res) => {
-//   try {
-//     res.render("workouts/index.ejs", { user: req.session.user });
-//   } catch (error) {
-//     console.log(error);
-//     res.send("My Workouts Index Page error");
-//   }
-// };
+
+const newPage = async (req, res) => {
+    try {
+        res.render("workouts/new.ejs");
+      } catch (error) {
+        res.redirect("/");
+      }
+};
 
 module.exports = {
   index,
+  newPage,
 };

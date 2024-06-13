@@ -52,6 +52,7 @@ const signInPost = async (req, res) => {
       res.send("Login failed! Please try again.");
     }
     req.session.user = {
+      _id: userInDatabase._id,
       username: userInDatabase.username,
     };
     res.redirect("/");

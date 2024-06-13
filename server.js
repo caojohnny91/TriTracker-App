@@ -10,7 +10,6 @@ const isSignedIn = require("./middleware/is-signed-in.js");
 const passUserToView = require("./middleware/pass-user-to-view.js");
 const path = require("path");
 
-// const workoutsController = require("./routes/workouts.js"); need to app.use?
 
 // const authController = require("./controllers/auth.js"); // made routes for auth
 const authRoutes = require("./routes/auth.js");
@@ -34,7 +33,7 @@ app.use(
   })
 );
 app.set("views", path.join(__dirname, "views"));
-// app.set("view engine", "ejs"); // do i need? no?
+app.set("view engine", "ejs");
 app.use(passUserToView);
 
 app.get("/", (req, res) => {
