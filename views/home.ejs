@@ -7,17 +7,19 @@
   </head>
   <body>
     <% if (user) {%>
-      <%- include("partials/_navbar.ejs") %>
-      <a href="/users/workouts/index">My Workouts</a>
-    <h1><%= user.username %>, welcome to TriTracker!</h1> <br>
+
+    <a href="/users/workouts/index">My Workouts</a>
+    <h1><%= user.username %>, welcome to TriTracker!</h1>
+    <br />
     <h3>Your Triathlon Journey Begins Here!</h3>
     <% } else {%>
-      <h1>Welcome to TriTracker!</h1> <br>
-      <h3>Your Triathlon Workout Tracking App</h3>
-      <% } %>
+    <h1>Welcome to TriTracker!</h1>
+    <br />
+    <h3>Your Triathlon Workout Tracking App</h3>
+    <% } %>
     <h3>SWIM BIKE RUN</h3>
     <!-- insert pics for swim, bike, run -->
-     <a href="/auth/sign-up">Sign Up</a>
-     <a href="/auth/sign-in">Sign In</a>
+    <%- include('./partials/_navbar.ejs') %>
+    <!-- only needs 1 . for nav bar not .. -->
   </body>
 </html>
