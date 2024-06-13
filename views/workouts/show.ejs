@@ -32,5 +32,11 @@
   <% if (workout.notes) { %>
     Notes: "<%= workout.notes %>"<br />
   <% } %>
+
+  <button><a href="/users/<%= user._id %>/edit">Edit Workout</a></button>
+
+  <form action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=DELETE" method="POST" onsubmit="return confirm('Are you sure you want to delete <%=workout.discipline%> on <%=workout.date%>?')">
+    <button type="submit">Delete Workout</button>
+  </form>
 </body>
 </html>

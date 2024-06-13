@@ -41,9 +41,22 @@ const show = async (req, res) => {
   }
 };
 
+const deleteWorkout = async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    currentUser.triathlon.id(req.params.workoutId).deleteOne();
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/workouts`);
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+};
+
 module.exports = {
   index,
   newPage,
   create,
   show,
+  deleteWorkout,
 };
