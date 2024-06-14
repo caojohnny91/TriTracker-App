@@ -74,6 +74,19 @@ const edit = async (req, res) => {
   }
 };
 
+const update = async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const workout = currentUser.triathlon.id(req.params.workoutId);
+    workout.set(req.body);
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/workouts/${req.params.workoutId}`);
+  } catch (error) {
+    console.log(error);
+    res.redirect("/");
+  }
+};
+
 module.exports = {
   index,
   newPage,
@@ -81,4 +94,5 @@ module.exports = {
   show,
   deleteWorkout,
   edit,
+  update,
 };

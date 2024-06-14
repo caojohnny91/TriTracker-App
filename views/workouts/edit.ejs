@@ -9,7 +9,7 @@
     <%- include('../partials/_navbar.ejs') %>
     <h1>Edit <%= workout.discipline %> on <%= workout.date.toLocaleDateString() %></h1>
     <!-- update form request for date -->
-    <form action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=PUT" method="POST">
+    <form action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=PUT" method="POST" onsubmit="return confirm('Are you sure you want to update <%=workout.discipline%> on <%=workout.date.toLocaleDateString()%>?')">
 
       <label for="date">Date:</label>
       <input type="date" name="date" value="<%= workout.date.toISOString().split('T')[0] %>" required />
