@@ -3,9 +3,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  /* text-align: center; */
   flex-wrap: wrap;
   margin-bottom: 0;
+  mar
+}
+
+.bike-icon {
+    margin: 0 -50px 0 -50px;
 }
 
 footer {
@@ -33,4 +37,8 @@ footer {
 .sign-up-link {
   text-decoration: none;
   color: white;
+}
+
+.sign-in-link{
+    margin-right: -125px;
 }

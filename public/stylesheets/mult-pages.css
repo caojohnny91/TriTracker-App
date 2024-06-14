@@ -8,7 +8,7 @@ h1 {
   font-weight: 400;
   font-size: 3em;
   font-style: normal;
-  color: rgb(235, 6, 6);
+  color: rgb(144, 13, 21);
   text-align: center;
   margin-top: 100px;
   margin-bottom: 0;
@@ -30,8 +30,9 @@ body {
   font-weight: 100;
   font-style: normal;
   font-variation-settings: "wdth" 100;
-  background-color: #343434;
+  background-color: #727171;
   color: white;
   max-width: 100vw;
   align-items: center;
 }
+

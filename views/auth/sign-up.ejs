@@ -3,11 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/mult-pages.css" />
+    <link rel="stylesheet" href="/stylesheets/sign.css" />
+
     <title>Sign UP</title>
   </head>
   <body>
-    <a href="/">Home</a>
+    <a class="home-link" href="/">
+      <div class="home-text">Home</div>
+    </a>
     <h1>Create a TriTracker account!</h1>
+    <div class="icon-container">
+      <div class="swim-icon">
+        <img
+          class="swim-pic-icon"
+          src="/icon-pics/swim.png"
+          alt="swim picture"
+        />
+      </div>
+      <div class="bike-icon">
+        <img
+          class="run-pic-icon"
+          src="/icon-pics/bike.png"
+          alt="swim picture"
+        />
+      </div>
+      <div class="run-icon">
+        <img class="run-pic-icon" src="/icon-pics/run.png" alt="swim picture" />
+      </div>
+    </div>
 
     <form action="/auth/sign-up" method="POST">
       <label for="username">Username:</label>
