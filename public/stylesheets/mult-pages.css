@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Permanent+Marker&family=Rock+Salt&display=swap');
+
+
+h1 {
+  font-family: "Permanent Marker", cursive, sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  font-style: normal;
+  color: rgb(235, 6, 6);
+  text-align: center;
+}
+h3 {
+  font-family: "Rock Salt", cursive, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+
+body {
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+  background-color: #343434;
+  color: white;
+}

@@ -45,7 +45,6 @@ const show = async (req, res) => {
     res.redirect("/");
   }
 };
-
 const deleteWorkout = async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
