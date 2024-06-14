@@ -4,23 +4,20 @@
   <% if(user) {%>
   <!-- <a href="/users/< %= user._id %>/workouts/new">Add Workout</a> ???-->
   <div class="nav-container">
-    <a class="my-workouts-link" href="/users/<%= user._id %>/workouts">
-      <div class="my-workouts-text">My Workouts</div>
+    <a class="add-workout-link" href="/users/<%= user._id %>/workouts/new">
+      <div class="add-workout-text">Add Workout</div>
     </a>
+
+    <a class="our-community-link" href="/users/<%= user._id %>/workouts/new">
+      <div class="our-community-text">Our Community</div>
+    </a>
+    
     <a class="sign-out-link" href="/auth/sign-out">
       <div class="sign-out-text">Sign Out</div>
     </a>
   </div>
 
   <% } else { %>
-  <div class="sign-container">
-    <a class="sign-in-link" href="/auth/sign-in">
-      <div class="sign-in-text">Sign In</div>
-    </a>
-    <a class="sign-up-link" href="/auth/sign-up">
-      <div class="sign-up-text">Sign Up</div>
-    </a>
-  </div>
-
+  <!-- add conditional for community page -->
   <% } %>
 </nav>

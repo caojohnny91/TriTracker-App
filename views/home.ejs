@@ -8,9 +8,18 @@
     <title>Home Page</title>
   </head>
   <body>
-    <%- include('./partials/_navbar.ejs') %>
     <% if (user) {%>
-      <h1><%= user.username %>, welcome to TriTracker!</h1>
+      <div class="home-nav-container">
+        <a class="my-workouts-link" href="/users/<%= user._id %>/workouts">
+          <div class="my-workouts-text">My Workouts</div>
+        </a>
+
+        <a class="sign-out-link" href="/auth/sign-out">
+          <div class="sign-out-text">Sign Out</div>
+        </a>
+      </div>
+
+          <h1><%= user.username %>, welcome to TriTracker!</h1>
       <br />
       <h3>Your Triathlon Journey Begins Here!</h3>
       <% } else {%>
@@ -39,6 +48,15 @@
         <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
         <h3>RUN</h3>
       </div>
+    </div>
+
+    <div class="sign-container">
+      <a class="sign-in-link" href="/auth/sign-in">
+        <div class="sign-in-text">Sign In</div>
+      </a>
+      <a class="sign-up-link" href="/auth/sign-up">
+        <div class="sign-up-text">Sign Up</div>
+      </a>
     </div>
 
     <footer>

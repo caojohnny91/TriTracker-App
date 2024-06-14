@@ -28,7 +28,7 @@ footer {
 }
 
 .sign-container,
-.nav-container {
+.home-nav-container {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;

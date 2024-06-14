@@ -1,0 +1,32 @@
+/* add box shadow */
+
+h1{
+    margin-bottom: 50px;
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+  
+  .bike-icon {
+      margin: 0 -50px 0 -50px;
+  }
+  
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  
+  .add-workout-link,
+  .our-community-link,
+  .sign-out-link {
+      font-family: "Rock Salt", cursive, sans-serif;
+      font-weight: 400;  text-decoration: none;
+      color: white;
+  }
+  
