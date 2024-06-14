@@ -1,0 +1,36 @@
+/* add box shadow */
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  /* text-align: center; */
+  flex-wrap: wrap;
+  margin-bottom: 0;
+}
+
+footer {
+  font-size: 0.7em;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+}
+
+.sign-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.sign-in-link,
+.sign-up-link {
+  text-decoration: none;
+  color: white;
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/mult-pages.css" />
+    <link rel="stylesheet" href="/stylesheets/home.css" />
     <title>Home Page</title>
   </head>
   <body>
@@ -19,35 +20,36 @@
     <% } %>
     <div class="icon-container">
       <div class="swim-icon">
-        <h3>SWIM</h3>
         <img
           class="swim-pic-icon"
           src="/icon-pics/swim.png"
           alt="swim picture"
         />
+        <h3>SWIM</h3>
       </div>
       <div class="bike-icon">
-        <h3>BIKE</h3>
         <img
           class="run-pic-icon"
           src="/icon-pics/bike.png"
           alt="swim picture"
         />
+        <h3>BIKE</h3>
       </div>
       <div class="run-icon">
-        <h3>RUN</h3>
         <img class="run-pic-icon" src="/icon-pics/run.png" alt="swim picture" />
+        <h3>RUN</h3>
       </div>
     </div>
     <%- include('./partials/_navbar.ejs') %>
     <!-- only needs 1 . for nav bar not .. -->
 
     <footer>
-      Icons by<a
+      <a
+        class="footer-link"
         href="https://www.freepik.com/icon/ocean_10894903#fromView=image_search_similar&page=1&position=31&uuid=adcdca9b-8989-40c7-a065-a21d8775816c"
       >
-        Boris Farias & Freepik</a
-      >
+        <div class="footer-text">Icons by Boris Farias & Freepik</div>
+      </a>
     </footer>
   </body>
 </html>
