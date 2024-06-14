@@ -24,7 +24,7 @@ const signUpPost = async (req, res) => {
 
     const user = await User.create(req.body);
 
-    res.send(`Thank you for signing up ${user.username}!`);
+    res.render("home.ejs", { user: user });
   } catch (error) {
     res.redirect("/");
   }

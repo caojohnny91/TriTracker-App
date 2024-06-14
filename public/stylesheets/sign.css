@@ -1,4 +1,8 @@
 .home-link {
+  font-family: "Rock Salt", cursive, sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
   text-decoration: none;
   color: white;
   align-items: center;
@@ -17,8 +21,12 @@
 .bike-icon {
   margin: 0 -50px 0 -50px;
 }
-
+/* add font and more syling to form with hovers */
 form {
+  font-family: "Rock Salt", cursive, sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -8,12 +8,12 @@
     <title>Home Page</title>
   </head>
   <body>
+    <%- include('./partials/_navbar.ejs') %>
     <% if (user) {%>
-    <a href="/users/<%= user._id %>/workouts/index">My Workouts</a>
-    <h1><%= user.username %>, welcome to TriTracker!</h1>
-    <br />
-    <h3>Your Triathlon Journey Begins Here!</h3>
-    <% } else {%>
+      <h1><%= user.username %>, welcome to TriTracker!</h1>
+      <br />
+      <h3>Your Triathlon Journey Begins Here!</h3>
+      <% } else {%>
     <h1>Welcome to TriTracker!</h1>
     <br />
     <h3>Start Tracking Your Journey</h3>
@@ -31,17 +31,15 @@
         <img
           class="run-pic-icon"
           src="/icon-pics/bike.png"
-          alt="swim picture"
+          alt="bike picture"
         />
         <h3>BIKE</h3>
       </div>
       <div class="run-icon">
-        <img class="run-pic-icon" src="/icon-pics/run.png" alt="swim picture" />
+        <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
         <h3>RUN</h3>
       </div>
     </div>
-    <%- include('./partials/_navbar.ejs') %>
-    <!-- only needs 1 . for nav bar not .. -->
 
     <footer>
       <a

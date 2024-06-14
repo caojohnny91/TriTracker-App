@@ -27,18 +27,23 @@ footer {
   text-decoration: none;
 }
 
-.sign-container {
+.sign-container,
+.nav-container {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
 
 .sign-in-link,
-.sign-up-link {
-  text-decoration: none;
-  color: white;
+.sign-up-link,
+.my-workouts-link,
+.sign-out-link {
+    font-family: "Rock Salt", cursive, sans-serif;
+    font-weight: 400;  text-decoration: none;
+    color: white;
 }
 
-.sign-in-link{
+.sign-in-link,
+.my-workouts-link{
     margin-right: -125px;
 }
