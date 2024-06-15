@@ -10,6 +10,7 @@ h1{
     justify-content: space-evenly;
     flex-wrap: wrap;
     margin-bottom: 0;
+    text-align: center;
   }
   
   .bike-icon {
