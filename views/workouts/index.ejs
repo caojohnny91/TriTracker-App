@@ -39,9 +39,12 @@
           <% triathlon.forEach((workout) => { %>
             <li>
                 <!-- need yo fix date display -->
-              <a href="/users/<%= user._id %>/workouts/<%= workout._id %>">
-                Date: <%= workout.date.toString().slice(0, 15) %> Discipline: <%= workout.discipline %><br />
+                  <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
+                    <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %> Discipline: <%= workout.discipline %></u></div>
+                    </a>  
+                  <br />
               </a>
+
               Type: <%= workout.workoutType %><br />
       
               <% if (workout.time) { %>

@@ -1,38 +1,48 @@
 /* add box shadow */
 
-h1{
-    margin-bottom: 50px;
+h1 {
+  margin-bottom: 50px;
 }
 
 .icon-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    margin-bottom: 0;
-    text-align: center;
-  }
-  
-  .bike-icon {
-      margin: 0 -50px 0 -50px;
-  }
-  
-  .nav-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-  
-  .add-workout-link,
-  .our-community-link,
-  .sign-out-link {
-      font-family: "Rock Salt", cursive, sans-serif;
-      font-weight: 400;  text-decoration: none;
-      color: white;
-  }
-  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin-bottom: 0;
+  text-align: center;
+}
 
+.bike-icon {
+  margin: 0 -50px 0 -50px;
+}
 
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 
+.add-workout-link,
+.our-community-link,
+.sign-out-link {
+  font-family: "Rock Salt", cursive, sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+}
 
-  
+.workout-title-text {
+    font-family: "Permanent Marker", cursive, sans-serif;
+    font-weight: 400;
+    color: rgb(144, 13, 21);
+    margin-bottom: -20px;
+  }
+
+.workout-title-link {
+    text-decoration: none;
+}  
+
+li {
+margin-top: 15px;
+}  
