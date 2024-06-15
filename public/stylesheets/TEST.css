@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Permanent+Marker&family=Rock+Salt&display=swap");
+
+body {
+  font-family: "Fredoka", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  background-color: #727171;
+  color: white;
+  max-width: 100vw;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Permanent Marker", cursive, sans-serif;
+  font-weight: 400;
+  font-size: 3em;
+  font-style: normal;
+  color: rgb(144, 13, 21);
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: "Rock Salt", cursive, sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.workouts-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.workout-column {
+  flex: 1;
+  margin: 10px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+a {
+  color: #00f;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
