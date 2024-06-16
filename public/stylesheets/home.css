@@ -5,11 +5,10 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
   margin-bottom: 0;
-  mar
 }
 
 .bike-icon {
-    margin: 0 -50px 0 -50px;
+  margin: 0 -50px 0 -50px;
 }
 
 footer {
@@ -38,12 +37,13 @@ footer {
 .sign-up-link,
 .my-workouts-link,
 .sign-out-link {
-    font-family: "Rock Salt", cursive, sans-serif;
-    font-weight: 400;  text-decoration: none;
-    color: white;
+  font-family: "Rock Salt", cursive, sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
 }
 
 .sign-in-link,
-.my-workouts-link{
-    margin-right: -125px;
+.my-workouts-link {
+  margin-right: -125px;
 }

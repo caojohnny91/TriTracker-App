@@ -33,11 +33,12 @@
             <% swimWorkouts.forEach((workout) => { %>
               
               <li>
+                <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
+                <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %></u></div>
+                </a>
+                 
                   <div class="workout-cards">
-                    <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
-                    <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %></u></div>
-                    </a>  
-                    <br />
+
                     Type: <%= workout.workoutType %><br />
           
                     <% if (workout.time) { %>
@@ -91,11 +92,12 @@
             <% bikeWorkouts.forEach((workout) => { %>
               
               <li>
+                <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
+                  <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %></u></div>
+                  </a>
+
                   <div class="workout-cards">
-                    <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
-                    <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %></u></div>
-                    </a>  
-                    <br />
+
                     Type: <%= workout.workoutType %><br />
           
                     <% if (workout.time) { %>
@@ -149,11 +151,12 @@
             <% runWorkouts.forEach((workout) => { %>
               
               <li>
+                <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
+                <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %></u></div>
+                </a> 
+
                   <div class="workout-cards">
-                    <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
-                    <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %></u></div>
-                    </a>  
-                    <br />
+
                     Type: <%= workout.workoutType %><br />
           
                     <% if (workout.time) { %>
