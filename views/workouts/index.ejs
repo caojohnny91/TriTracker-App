@@ -11,66 +11,91 @@
     <%- include('../partials/_navbar.ejs') %>
 
     <h1>My Workouts!</h1>
-    <div class="icon-container">
-      <div class="swim-icon">
-        <img
-          class="swim-pic-icon"
-          src="/icon-pics/swim.png"
-          alt="swim picture"
-        />
-        <h3>SWIM</h3>
-      </div>
-      <div class="bike-icon">
-        <img
-          class="run-pic-icon"
-          src="/icon-pics/bike.png"
-          alt="bike picture"
-        />
-        <h3>BIKE</h3>
-      </div>
-      <div class="run-icon">
-        <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
-        <h3>RUN</h3>
-      </div>
-    </div>
-    <!-- insert pics for swim, bike, run -->
-    <% if (triathlon.length > 0) { %>
-        <ul>
-          <% triathlon.forEach((workout) => { %>
-            <li>
-                <!-- need yo fix date display -->
-                  <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
-                    <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %> Discipline: <%= workout.discipline %></u></div>
-                    </a>  
-                  <br />
-              </a>
+    <div class="workouts-container">
+      <div class="icon-container">
+        <div class="swim-icon">
+          <img
+            class="swim-pic-icon"
+            src="/icon-pics/swim.png"
+            alt="swim picture"
+          />
+          <h3>SWIM</h3>
+        </div>
+      <% let swimWorkouts = triathlon.filter(workout => workout.discipline === "Swim").sort((a, b) => Date (a.date) - new Date(b.date)); %>
+      <% if (swimWorkouts.length > 0) { %>
+          <ul>
+            <% swimWorkouts.forEach((workout) => { %>
+                    
+            <div class="swim-cards">
+              <li>
+                <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
+                  <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %> Discipline: <%= workout.discipline %></u></div>
+                </a>  
+                <br />
+                Type: <%= workout.workoutType %><br />
+        
+                <% if (workout.time) { %>
+                  <% if (workout.time > 1) { %>
+                    Time: <%= workout.time %> minutes<br />
+                  <% } else if (workout.time === 1) { %>
+                    Time: <%= workout.time %> minute<br />
+                  <% } %>
+                <% } %>
+        
+                <% if (workout.distance) { %>
+                  <% if (workout.distance > 1) { %>
+                    Distance: <%= workout.distance %> miles<br />
+                  <% } else if (workout.distance === 1) { %>
+                    Distance: <%= workout.distance %> mile<br />
+                  <% } %>
+                <% } %>
+        
+                <% if (workout.notes) { %>
+                  Notes: "<%= workout.notes %>"<br />
+                <% } %>
+              </li>
+            <% }); %>
+          </ul>
+        <% } else { %>
+          <p>You have no Swim workouts!</p>
+        <% } %>
+            </div>
 
-              Type: <%= workout.workoutType %><br />
-      
-              <% if (workout.time) { %>
-                <% if (workout.time > 1) { %>
-                  Time: <%= workout.time %> minutes<br />
-                <% } else if (workout.time === 1) { %>
-                  Time: <%= workout.time %> minute<br />
-                <% } %>
-              <% } %>
-      
-              <% if (workout.distance) { %>
-                <% if (workout.distance > 1) { %>
-                  Distance: <%= workout.distance %> miles<br />
-                <% } else if (workout.distance === 1) { %>
-                  Distance: <%= workout.distance %> mile<br />
-                <% } %>
-              <% } %>
-      
-              <% if (workout.notes) { %>
-                Notes: "<%= workout.notes %>"<br />
-              <% } %>
-            </li>
-          <% }); %>
-        </ul>
-      <% } else { %>
-        <p>You have no workouts!</p>
-      <% } %>
-                  </body>
+
+
+
+
+
+
+
+
+
+
+        <div class="bike-icon">
+          <img
+            class="run-pic-icon"
+            src="/icon-pics/bike.png"
+            alt="bike picture"
+          />
+          <h3>BIKE</h3>
+        </div>
+        <div class="run-icon">
+          <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
+          <h3>RUN</h3>
+        </div>
+      </div>
+      <!-- < % if (triathlon.length > 0) { %> -->
+          <!-- <ul> -->
+            <!-- < % triathlon.forEach((workout) => { %> -->
+              <!-- <li> -->
+                  <!-- need yo fix date display -->
+                    <!-- <a class="workout-title-link" href="/users/< %= user._id %>/workouts/< %= workout._id %>">
+                      <div class="workout-title-text"><u>Date: < %= workout.date.toString().slice(0, 15) %> Discipline: < %= workout.discipline %></u></div>
+                      </a>  
+                    <br />
+                </a> -->
+  
+                
+    </div>
+  </body>
 </html>
