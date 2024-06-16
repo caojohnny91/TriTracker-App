@@ -24,9 +24,9 @@
             </div>
         </div>
   
+        <div class="workout-cards">
         <% let swimWorkouts = triathlon.filter(workout => workout.discipline === "Swim").sort((a, b) => Date (a.date) - new Date(b.date)); %>
         <% if (swimWorkouts.length > 0) { %>
-          <div class="swim-cards">
             <ul>
               <% swimWorkouts.forEach((workout) => { %>
                 
@@ -66,25 +66,67 @@
 
 
 
-
-
-
-
-
-
-
-
-
-        <div class="bike-icon">
-          <img
-            class="run-pic-icon"
-            src="/icon-pics/bike.png"
-            alt="bike picture"
-          />
-          <h3>BIKE</h3>
+      <div class="workout-column bike-column">
+        <div class="icon-container">
+  
+          <div class="bike-icon">
+            <img
+              class="run-pic-icon"
+              src="/icon-pics/bike.png"
+              alt="bike picture"
+            />
+            <h3>BIKE</h3>
+          </div>
         </div>
+        <div class="workout-cards"></div>
+        <% let bikeWorkouts = triathlon.filter(workout => workout.discipline === "Bike").sort((a, b) => Date (a.date) - new Date(b.date)); %>
+        <% if (bikeWorkouts.length > 0) { %>
+            <ul>
+              <% bikeWorkouts.forEach((workout) => { %>
+                
+                <li>
+                  <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
+                    <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %> Discipline: <%= workout.discipline %></u></div>
+                  </a>  
+                  <br />
+                  Type: <%= workout.workoutType %><br />
+          
+                  <% if (workout.time) { %>
+                    <% if (workout.time > 1) { %>
+                      Time: <%= workout.time %> minutes<br />
+                    <% } else if (workout.time === 1) { %>
+                      Time: <%= workout.time %> minute<br />
+                    <% } %>
+                  <% } %>
+          
+                  <% if (workout.distance) { %>
+                    <% if (workout.distance > 1) { %>
+                      Distance: <%= workout.distance %> miles<br />
+                    <% } else if (workout.distance === 1) { %>
+                      Distance: <%= workout.distance %> mile<br />
+                    <% } %>
+                  <% } %>
+          
+                  <% if (workout.notes) { %>
+                    Notes: "<%= workout.notes %>"<br />
+                  <% } %>
+                </li>
+              <% }); %>
+            </ul>
+          <% } else { %>
+            <p>You have no Bike workouts!</p>
+          <% } %>
+      </div>
 
 
+
+      <div class="workout-column run-column">
+
+
+
+
+
+      <div class="icon-container">
         <div class="run-icon">
           <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
           <h3>RUN</h3>
