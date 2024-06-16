@@ -94,5 +94,19 @@ input {
   transform: scale(1.15);
   border: 2px dashed white;
 }
+.nav-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.add-workout-link,
+.our-community-link,
+.sign-out-link {
+  font-family: "Rock Salt", cursive, sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  color: white;
+}
 
 /* add active response */

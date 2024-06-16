@@ -1,0 +1,26 @@
+.icon-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.bike-icon {
+    margin: 0 -50px 0 -50px;
+  }
+  
+
+.edit-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: 400px;
+  margin: 50px 200px 20px 200px;
+  padding: 20px;
+  background-color: rgba(72, 72, 72, 0.8);
+  border-radius: 20px;
+  box-shadow: 0px 4px 8px rgba(216, 75, 84, 1);
+}

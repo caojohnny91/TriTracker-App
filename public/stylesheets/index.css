@@ -82,7 +82,6 @@ li {
 }
 
 .workout-cards:hover {
-  /* transform: scale(width, height) */
   transform: scale(1.15);
   border: 2px dashed white;
 }

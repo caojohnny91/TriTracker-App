@@ -18,7 +18,6 @@
           src="/icon-pics/swim.png"
           alt="swim picture"
         />
-        <h3>SWIM</h3>
       </div>
       <div class="bike-icon">
         <img
@@ -26,45 +25,49 @@
           src="/icon-pics/bike.png"
           alt="bike picture"
         />
-        <h3>BIKE</h3>
       </div>
       <div class="run-icon">
         <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
-        <h3>RUN</h3>
       </div>
     </div>
 
-    <h1>Edit <%= workout.discipline %> on <%= workout.date.toLocaleDateString() %></h1>
-    <!-- update form request for date -->
-    <form action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=PUT" method="POST" onsubmit="return confirm('Are you sure you want to update <%=workout.discipline%> on <%=workout.date.toLocaleDateString()%>?')">
+    <div class="edit-details">
 
-      <label for="date">Date:</label>
-      <input type="date" name="date" value="<%= workout.date.toISOString().split('T')[0] %>" required />
+      <h1>Edit <%= workout.discipline %> Workout</h1><br />
+      <h3>on <%= workout.date.toLocaleDateString() %></h3>
+      <!-- update form request for date -->
+      <form action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=PUT" method="POST" onsubmit="return confirm('Are you sure you want to update <%=workout.discipline%> on <%=workout.date.toLocaleDateString()%>?')">
+  
+        <label for="date">Date:</label>
+        <input type="date" name="date" value="<%= workout.date.toISOString().split('T')[0] %>" required />
+  
+        <label for="discipline">Discipline:</label>
+        <select name="discipline" required>
+          <option value="Swim" <%= workout.discipline === "Swim" ? "selected" : "" %>>Swim</option>
+          <option value="Bike" <%= workout.discipline === "Bike" ? "selected" : "" %>>Bike</option>
+          <option value="Run" <%= workout.discipline === "Run" ? "selected" : "" %>>Run</option>
+        </select>
+  
+        <label for="workoutType">Workout Type:</label>
+        <select name="workoutType" required>
+          <option value="Recovery" <%= workout.workoutType === "Recovery" ? "selected" : "" %>>Recovery</option>
+          <option value="Zone 2" <%= workout.workoutType === "Zone 2" ? "selected" : "" %>>Zone 2</option>
+          <option value="Tempo" <%= workout.workoutType === "Tempo" ? "selected" : "" %>>Tempo</option>
+          <option value="Interval" <%= workout.workoutType === "Interval" ? "selected" : "" %>>Interval</option>
+        </select>
+  
+        <label for="time">Time (minutes):</label>
+        <input type="number" name="time" step="0.001" min="0" value="<%= workout.time %>" />
+  
+        <label for="distance">Distance (miles):</label>
+        <input type="number" name="distance" step="0.001" min="0" value="<%= workout.distance %>"/>
+  
+        <label for="notes">Notes:</label>
+        <textarea name="notes" maxlength="50"><%= workout.notes %></textarea>
 
-      <label for="discipline">Discipline:</label>
-      <select name="discipline" required>
-        <option value="Swim" <%= workout.discipline === "Swim" ? "selected" : "" %>>Swim</option>
-        <option value="Bike" <%= workout.discipline === "Bike" ? "selected" : "" %>>Bike</option>
-        <option value="Run" <%= workout.discipline === "Run" ? "selected" : "" %>>Run</option>
-      </select>
-
-      <label for="workoutType">Workout Type:</label>
-      <select name="workoutType" required>
-        <option value="Recovery" <%= workout.workoutType === "Recovery" ? "selected" : "" %>>Recovery</option>
-        <option value="Zone 2" <%= workout.workoutType === "Zone 2" ? "selected" : "" %>>Zone 2</option>
-        <option value="Tempo" <%= workout.workoutType === "Tempo" ? "selected" : "" %>>Tempo</option>
-        <option value="Interval" <%= workout.workoutType === "Interval" ? "selected" : "" %>>Interval</option>
-      </select>
-
-      <label for="time">Time (minutes):</label>
-      <input type="number" name="time" step="0.001" min="0" value="<%= workout.time %>" />
-
-      <label for="distance">Distance (miles):</label>
-      <input type="number" name="distance" step="0.001" min="0" value="<%= workout.distance %>"/>
-
-      <label for="notes">Notes:</label>
-      <textarea name="notes" maxlength="50"><%= workout.notes %></textarea>
-
+      
+      
+        </div>
       <button type="submit">Update Workout</button>
     </form>
   </body>
