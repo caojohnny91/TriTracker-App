@@ -79,7 +79,7 @@ const update = async (req, res) => {
     const workout = currentUser.triathlon.id(req.params.workoutId);
     workout.set(req.body);
     await currentUser.save();
-    res.redirect(`/users/${currentUser._id}/workouts/${req.params.workoutId}`);
+    res.redirect(`/users/${currentUser._id}/workouts`);
   } catch (error) {
     console.log(error);
     res.redirect("/");
