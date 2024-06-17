@@ -24,6 +24,13 @@ TriTracker also has a community page that lets you see other members and their w
 **Community Page**
 ![TriTracker-Community-Page](/Pics/TriTracker-Community.png)
 
+## Getting Started
+
+**TriTracker Link:** Link to Deployed TriTracker Goes Here!
+
+**Planning Materials:** [TriTracker Trello Link](https://trello.com/b/NS4g6Gtf/tritracker-app)
+![TriTracker-Planning-Materials](/Pics/TriTracker-Planning-Materials.png)
+
 ## Technologies Used
 
 - HTML | CSS | JavaScript <br />
