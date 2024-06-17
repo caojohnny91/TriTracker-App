@@ -14,6 +14,8 @@ const path = require("path");
 // const authController = require("./controllers/auth.js"); // made routes for auth
 const authRoutes = require("./routes/auth.js");
 const workoutsController = require("./routes/workouts.js");
+const usersRoutes = require("./routes/users.js");
+
 
 const port = process.env.PORT ? process.env.PORT : "3000";
 
@@ -52,6 +54,8 @@ app.use(isSignedIn);
 
 // app.use("/users/workouts", workoutsController); // old before is-signed/pass middleware
 app.use("/users/:userId/workouts", workoutsController);
+app.use('/users', usersRoutes);
+
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);
