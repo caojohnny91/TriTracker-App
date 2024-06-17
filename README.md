@@ -37,6 +37,6 @@ TriTracker also has a community page that lets you see other members and their w
 Planned future enhancements include:
 
 - Making the forms more appealing to the eye.
-- Creating a ne wworkout page that has the total time and distance for each discipline's workout type.
+- Creating a new wworkout page that has the total time and distance for each discipline's workout type.
 - Create a Dark/Light mode button.
 - Send likes and comments to other user's workouts.
