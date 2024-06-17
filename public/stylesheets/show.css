@@ -66,6 +66,7 @@ h3 {
   border: 2px dashed white;
 }
 .delete-button:hover {
+  cursor: pointer;
   transform: scale(1.15);
   border: 2px dashed white;
 }
