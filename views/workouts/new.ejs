@@ -35,34 +35,39 @@
       <h3>Add a New Workout</h3>
 
        <form action="/users/<%= user._id %>/workouts" method="POST">
-         <label for="date">Date:</label>
-         <input type="date" name="date" required />
-   
-         <label for="discipline">Discipline:</label>
-         <select name="discipline" required>
-           <option value="Swim">Swim</option>
-           <option value="Bike">Bike</option>
-           <option value="Run">Run</option>
-         </select>
-   
-         <label for="workoutType">Workout Type:</label>
-         <select name="workoutType" required>
-           <option value="Recovery">Recovery</option>
-           <option value="Zone 2">Zone 2</option>
-           <option value="Tempo">Tempo</option>
-           <option value="Interval">Interval</option>
-         </select>
-         <br />
-   
-         <label for="time">Time (minutes):</label>
-         <input type="number" name="time" step="0.001" min="0" />
-   
-         <label for="distance">Distance (miles):</label>
-         <input type="number" name="distance" step="0.001" min="0" />
-         <br />
-   
-         <label for="notes">Notes:</label>
-         <textarea name="notes" maxlength="50"></textarea>
+        <fieldset aria-labelledby="submit-legend">
+          <legend class="submit-legend">New Workout Form</legend>
+
+          <label for="date">Date:</label>
+          <input type="date" name="date" required />
+    
+          <label for="discipline">Discipline:</label>
+          <select name="discipline" required>
+            <option value="Swim">Swim</option>
+            <option value="Bike">Bike</option>
+            <option value="Run">Run</option>
+          </select>
+    
+          <label for="workoutType">Workout Type:</label>
+          <select name="workoutType" required>
+            <option value="Recovery">Recovery</option>
+            <option value="Zone 2">Zone 2</option>
+            <option value="Tempo">Tempo</option>
+            <option value="Interval">Interval</option>
+          </select>
+          <br />
+    
+          <label for="time">Time (minutes):</label>
+          <input type="number" name="time" step="0.001" min="0" />
+    
+          <label for="distance">Distance (miles):</label>
+          <input type="number" name="distance" step="0.001" min="0" />
+          <br />
+    
+          <label for="notes">Notes:</label>
+          <textarea name="notes" maxlength="50"></textarea>
+
+        </fieldset>
 
      </div>
 
