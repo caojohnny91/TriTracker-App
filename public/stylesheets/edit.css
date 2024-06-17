@@ -53,3 +53,16 @@ h3 {
   transform: skew(-3deg, 3deg);
   border: 2px dashed white;
 }
+
+.submit-legend {
+  font-family: "Rock Salt", cursive, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  background: linear-gradient(to right, white, rgb(255, 176, 191), white);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+fieldset {
+  border: 1px dashed rgb(216, 75, 84);
+}
