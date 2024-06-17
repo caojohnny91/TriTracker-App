@@ -4,64 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/mult-pages.css" />
-    <link rel="stylesheet" href="/stylesheets/index.css">
+    <link rel="stylesheet" href="/stylesheets/new.css">
 
     <title>Add a New Workout</title>
   </head>
   <body>
         <!-- need "My Workouts" button on nav bar for edit page and new page -->
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Add a New Workout</h1>
     <div class="icon-container">
       <div class="swim-icon">
         <img
-          class="swim-pic-icon"
-          src="/icon-pics/swim.png"
-          alt="swim picture"
+        class="swim-pic-icon"
+        src="/icon-pics/swim.png"
+        alt="swim picture"
         />
-      </div>
-      <div class="bike-icon">
-        <img
+        </div>
+        <div class="bike-icon">
+          <img
           class="run-pic-icon"
           src="/icon-pics/bike.png"
           alt="bike picture"
-        />
-      </div>
-      <div class="run-icon">
-        <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
-      </div>
+          />
+          </div>
+          <div class="run-icon">
+            <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
+            </div>
     </div>
-
+            
     <!-- update form request for date -->
-    <form action="/users/<%= user._id %>/workouts" method="POST">
-      <label for="date">Date:</label>
-      <input type="date" name="date" required />
+    <div class="add-details">
+      <h1>Crushing it!</h1>
+      <h3>Add a New Workout</h3>
 
-      <label for="discipline">Discipline:</label>
-      <select name="discipline" required>
-        <option value="Swim">Swim</option>
-        <option value="Bike">Bike</option>
-        <option value="Run">Run</option>
-      </select>
+       <form action="/users/<%= user._id %>/workouts" method="POST">
+         <label for="date">Date:</label>
+         <input type="date" name="date" required />
+   
+         <label for="discipline">Discipline:</label>
+         <select name="discipline" required>
+           <option value="Swim">Swim</option>
+           <option value="Bike">Bike</option>
+           <option value="Run">Run</option>
+         </select>
+   
+         <label for="workoutType">Workout Type:</label>
+         <select name="workoutType" required>
+           <option value="Recovery">Recovery</option>
+           <option value="Zone 2">Zone 2</option>
+           <option value="Tempo">Tempo</option>
+           <option value="Interval">Interval</option>
+         </select>
+         <br />
+   
+         <label for="time">Time (minutes):</label>
+         <input type="number" name="time" step="0.001" min="0" />
+   
+         <label for="distance">Distance (miles):</label>
+         <input type="number" name="distance" step="0.001" min="0" />
+         <br />
+   
+         <label for="notes">Notes:</label>
+         <textarea name="notes" maxlength="50"></textarea>
 
-      <label for="workoutType">Workout Type:</label>
-      <select name="workoutType" required>
-        <option value="Recovery">Recovery</option>
-        <option value="Zone 2">Zone 2</option>
-        <option value="Tempo">Tempo</option>
-        <option value="Interval">Interval</option>
-      </select>
+     </div>
 
-      <label for="time">Time (minutes):</label>
-      <input type="number" name="time" step="0.001" min="0" />
-
-      <label for="distance">Distance (miles):</label>
-      <input type="number" name="distance" step="0.001" min="0" />
-
-      <label for="notes">Notes:</label>
-      <textarea name="notes" maxlength="50"></textarea>
-
-      <button type="submit">Add Workout</button>
+      <button class="add-button" type="submit">Add Workout</button>
     </form>
   </body>
 </html>
