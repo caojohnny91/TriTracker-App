@@ -35,9 +35,7 @@
             <% swimWorkouts.forEach((workout) => { %>
               
               <li>
-                <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
                 <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %></u></div>
-                </a>
                  
                   <div class="workout-cards">
 
@@ -94,9 +92,7 @@
             <% bikeWorkouts.forEach((workout) => { %>
               
               <li>
-                <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
                   <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %></u></div>
-                  </a>
 
                   <div class="workout-cards">
 
@@ -153,9 +149,7 @@
             <% runWorkouts.forEach((workout) => { %>
               
               <li>
-                <a class="workout-title-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>">
                 <div class="workout-title-text"><u>Date: <%= workout.date.toString().slice(0, 15) %></u></div>
-                </a> 
 
                   <div class="workout-cards">
 
