@@ -10,8 +10,8 @@
   <body>
     <% if (user) {%>
       <div class="home-nav-container">
-        <a class="my-workouts-link" href="/users/<%= user._id %>/workouts">
-          <div class="my-workouts-text">My Workouts</div>
+        <a class="view-workouts-link" href="/users/<%= user._id %>/workouts">
+          <div class="view-workouts-text">View My Workouts</div>
         </a>
 
         <a class="sign-out-link" href="/auth/sign-out">

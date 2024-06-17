@@ -50,6 +50,6 @@ h3 {
 }
   
 .update-button:hover {
-  transform: scale(1.15);
+  transform: skew(-3deg, 3deg);
   border: 2px dashed white;
 }

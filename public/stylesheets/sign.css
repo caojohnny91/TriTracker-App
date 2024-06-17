@@ -25,7 +25,6 @@ h1 {
 .bike-icon {
   margin: 0 -50px 0 -50px;
 }
-/* add font and more syling to form with hovers */
 
 .home-text {
   background-color: rgb(216, 75, 84);
@@ -56,3 +55,4 @@ form {
   box-shadow: 5px 6px rgb(144, 13, 21);
   margin: 20px 325px;
 }
+
