@@ -10,12 +10,9 @@ const isSignedIn = require("./middleware/is-signed-in.js");
 const passUserToView = require("./middleware/pass-user-to-view.js");
 const path = require("path");
 
-
-// const authController = require("./controllers/auth.js"); // made routes for auth
 const authRoutes = require("./routes/auth.js");
 const workoutsController = require("./routes/workouts.js");
 const usersRoutes = require("./routes/users.js");
-
 
 const port = process.env.PORT ? process.env.PORT : "3000";
 
@@ -24,9 +21,9 @@ mongoose.connection.on("connected", () => {
   console.log(`Connected to MongoDB ${mongoose.connection.name}.`);
 });
 
-app.use(express.urlencoded({ extended: false })); // midware to parse url data from forms
-app.use(methodOverride("_method")); // midware for using http verbs such as PUT or DELETE
-app.use(morgan("dev")); // morgan for http requests
+app.use(express.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
+app.use(morgan("dev"));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -35,10 +32,8 @@ app.use(
   })
 );
 
-app.use(express.static(path.join(__dirname, "public"))); // for css
+app.use(express.static(path.join(__dirname, "public")));
 
-// app.set("views", path.join(__dirname, "views"));
-// app.set("view engine", "ejs");
 app.use(passUserToView);
 
 app.get("/", (req, res) => {
@@ -52,10 +47,8 @@ app.get("/", (req, res) => {
 app.use("/auth", authRoutes);
 app.use(isSignedIn);
 
-// app.use("/users/workouts", workoutsController); // old before is-signed/pass middleware
 app.use("/users/:userId/workouts", workoutsController);
-app.use('/users', usersRoutes);
-
+app.use("/users", usersRoutes);
 
 app.listen(port, () => {
   console.log(`Listening on port ${port}.`);

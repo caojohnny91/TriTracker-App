@@ -11,15 +11,15 @@ const index = async (req, res) => {
 };
 
 const show = async (req, res) => {
-    try {
-      const user = await User.findById(req.params.userId);
-      res.render("users/show.ejs", { user, triathlon: user.triathlon } );
-    } catch (error) {
-      console.error(error);
-      res.redirect("/");
-    }
-  };
-  
+  try {
+    const user = await User.findById(req.params.userId);
+    res.render("users/show.ejs", { user, triathlon: user.triathlon });
+  } catch (error) {
+    console.error(error);
+    res.redirect("/");
+  }
+};
+
 module.exports = {
   index,
   show,

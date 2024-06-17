@@ -1,21 +1,19 @@
 <nav>
+  <% if(user) {%>
 
-    <% if(user) {%>
-  
-    <div class="nav-container">
-      <a class="view-workouts-link" href="/users/<%= user._id %>/workouts">
-        <div class="-view-workouts-text">View My Workouts</div>
-      </a>
-  
-      <a class="our-community-link" href="/users">
-        <div class="our-community-text">Our Community</div>
-      </a>
-    
-      <a class="sign-out-link" href="/auth/sign-out">
-        <div class="sign-out-text">Sign Out</div>
-      </a>
-    </div>
-  
-    <% } %>
-  </nav>
-  
+  <div class="nav-container">
+    <a class="view-workouts-link" href="/users/<%= user._id %>/workouts">
+      <div class="-view-workouts-text">View My Workouts</div>
+    </a>
+
+    <a class="our-community-link" href="/users">
+      <div class="our-community-text">Our Community</div>
+    </a>
+
+    <a class="sign-out-link" href="/auth/sign-out">
+      <div class="sign-out-text">Sign Out</div>
+    </a>
+  </div>
+
+  <% } %>
+</nav>

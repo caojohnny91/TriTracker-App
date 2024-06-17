@@ -12,43 +12,40 @@
     <%- include('../partials/_communityIndexNavBar.ejs') %>
 
     <div class="icon-container">
-        <div class="swim-icon">
-          <img
-            class="swim-pic-icon"
-            src="/icon-pics/swim.png"
-            alt="swim picture"
-          />
-        </div>
-        <div class="bike-icon">
-          <img
-            class="run-pic-icon"
-            src="/icon-pics/bike.png"
-            alt="bike picture"
-          />
-        </div>
-        <div class="run-icon">
-          <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
-        </div>
+      <div class="swim-icon">
+        <img
+          class="swim-pic-icon"
+          src="/icon-pics/swim.png"
+          alt="swim picture"
+        />
       </div>
-
-      
-      <div class="users-list">
-        <h1>TriTracker Community</h1>
-    
-        <h3>Because We're Stronger Together!</h3>
-        <div class="users-container">
-          <ul>
-            <% users.forEach(user => { %>
-            <li>
-              <a class="user-name-link" href="/users/<%= user._id %>">
-                  <div class="user-name-text"><%= user.username %></div>
-              </a>
-            </li>
-            <% }); %>
-          </ul>
-
-        </div>
-
+      <div class="bike-icon">
+        <img
+          class="run-pic-icon"
+          src="/icon-pics/bike.png"
+          alt="bike picture"
+        />
       </div>
+      <div class="run-icon">
+        <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
+      </div>
+    </div>
+
+    <div class="users-list">
+      <h1>TriTracker Community</h1>
+
+      <h3>Because We're Stronger Together!</h3>
+      <div class="users-container">
+        <ul>
+          <% users.forEach(user => { %>
+          <li>
+            <a class="user-name-link" href="/users/<%= user._id %>">
+              <div class="user-name-text"><%= user.username %></div>
+            </a>
+          </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>

@@ -2,75 +2,71 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><%= workout.discipline %> on <%= workout.date %></title>
-  <link rel="stylesheet" href="/stylesheets/mult-pages.css" />
-  <link rel="stylesheet" href="/stylesheets/show.css">
-
-</head>
-<body>
-  <%- include('../partials/_navbar.ejs') %>
-  <div class="icon-container">
-    <div class="swim-icon">
-      <img
-        class="swim-pic-icon"
-        src="/icon-pics/swim.png"
-        alt="swim picture"
-      />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= workout.discipline %> on <%= workout.date %></title>
+    <link rel="stylesheet" href="/stylesheets/mult-pages.css" />
+    <link rel="stylesheet" href="/stylesheets/show.css" />
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs') %>
+    <div class="icon-container">
+      <div class="swim-icon">
+        <img
+          class="swim-pic-icon"
+          src="/icon-pics/swim.png"
+          alt="swim picture"
+        />
+      </div>
+      <div class="bike-icon">
+        <img
+          class="run-pic-icon"
+          src="/icon-pics/bike.png"
+          alt="bike picture"
+        />
+      </div>
+      <div class="run-icon">
+        <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
+      </div>
     </div>
-    <div class="bike-icon">
-      <img
-        class="run-pic-icon"
-        src="/icon-pics/bike.png"
-        alt="bike picture"
-      />
-    </div>
-    <div class="run-icon">
-      <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
-    </div>
-  </div>
 
-  <!-- fix date render -->
-     <div class="workout-details">
-       <h1><%= workout.discipline %> Workout</h1> <br />
-       <h3>on <%= workout.date %></h3>
-   
-         Type: <%= workout.workoutType %> <br />
-     
-         <% if (workout.time) { %>
-           <% if (workout.time > 1) { %>
-             Time: <%= workout.time %> minutes<br />
-           <% } else if (workout.time === 1) { %>
-           Time: <%= workout.time %> minute<br />
-           <% } %>
-         <% } %>
-     
-         <% if (workout.distance) { %>
-           <% if (workout.distance > 1) { %>
-             Distance: <%= workout.distance %> miles<br />
-           <% } else if (workout.distance === 1) { %>
-             Distance: <%= workout.distance %> mile<br />
-           <% } %>
-         <% } %>
-     
-         <% if (workout.notes) { %>
-           Notes: "<%= workout.notes %>"<br />
-         <% } %>
-   
-     </div>
-   
-     <div class="workout-actions">
-       <a class="edit-link" href="/users/<%= user._id %>/workouts/<%= workout._id %>/edit">
-         <div class="edit-text">Edit Workout</div>
-       </a>
-   
-      <form class="delete-form"action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=DELETE" method="POST" onsubmit="return confirm('Are you sure you want to delete <%=workout.discipline%> on <%=workout.date%>?')">
-       <button class="delete-button" type="submit">Delete Workout</button>
-       </form>
-     </div>
+    <!-- fix date render if time -->
+    <div class="workout-details">
+      <h1><%= workout.discipline %> Workout</h1>
+      <br />
+      <h3>on <%= workout.date %></h3>
 
-    
-</body>
+      Type: <%= workout.workoutType %> <br />
+
+      <% if (workout.time) { %> <% if (workout.time > 1) { %> Time: <%=
+      workout.time %> minutes<br />
+      <% } else if (workout.time === 1) { %> Time: <%= workout.time %> minute<br />
+      <% } %> <% } %> <% if (workout.distance) { %> <% if (workout.distance > 1)
+      { %> Distance: <%= workout.distance %> miles<br />
+      <% } else if (workout.distance === 1) { %> Distance: <%= workout.distance
+      %> mile<br />
+      <% } %> <% } %> <% if (workout.notes) { %> Notes: "<%= workout.notes
+      %>"<br />
+      <% } %>
+    </div>
+
+    <div class="workout-actions">
+      <a
+        class="edit-link"
+        href="/users/<%= user._id %>/workouts/<%= workout._id %>/edit"
+      >
+        <div class="edit-text">Edit Workout</div>
+      </a>
+
+      <form
+        class="delete-form"
+        action="/users/<%= user._id %>/workouts/<%= workout._id %>?_method=DELETE"
+        method="POST"
+        onsubmit="return confirm('Are you sure you want to delete <%=workout.discipline%> on <%=workout.date%>?')"
+      >
+        <button class="delete-button" type="submit">Delete Workout</button>
+      </form>
+    </div>
+  </body>
 </html>

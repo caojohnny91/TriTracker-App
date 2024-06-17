@@ -48,7 +48,7 @@ h3 {
   transition: ease-in-out 0.25s;
   max-width: 200px;
 }
-  
+
 .update-button:hover {
   transform: skew(-3deg, 3deg);
   border: 2px dashed white;

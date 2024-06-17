@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Permanent+Marker&family=Rock+Salt&display=swap");
 
-/* make color gradient */
 h1 {
   font-family: "Permanent Marker", cursive, sans-serif;
   font-weight: 400;
@@ -24,8 +23,7 @@ h3 {
   text-align: center;
   margin-top: 0;
   margin-bottom: 75px;
-  text-shadow: 0px 0px 10px rgb(144, 13, 21)
-
+  text-shadow: 0px 0px 10px rgb(144, 13, 21);
 }
 
 body {
@@ -122,4 +120,3 @@ input {
 .run-icon {
   filter: drop-shadow(0px 0px 5px rgb(144, 13, 21));
 }
-

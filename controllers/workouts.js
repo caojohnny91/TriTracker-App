@@ -36,9 +36,7 @@ const show = async (req, res) => {
     let workout = currentUser.triathlon.id(req.params.workoutId);
     const date = workout.date;
     const formattedDate = date.toString().slice(0, 15);
-    console.log(formattedDate);
     workout = { ...workout._doc, date: formattedDate };
-    console.log(workout);
     res.render("workouts/show.ejs", { workout: workout });
   } catch (error) {
     console.log(error);
@@ -61,11 +59,6 @@ const edit = async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     let workout = currentUser.triathlon.id(req.params.workoutId);
-    // const date = workout.date;
-    // const formattedDate = date.toString().slice(0, 15);
-    // console.log(formattedDate);
-    // workout = { ...workout._doc, date: formattedDate };
-    // console.log(workout);
     res.render("workouts/edit.ejs", { workout: workout });
   } catch (error) {
     console.log(error);

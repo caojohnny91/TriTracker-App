@@ -9,20 +9,20 @@
   </head>
   <body>
     <% if (user) {%>
-      <div class="home-nav-container">
-        <a class="view-workouts-link" href="/users/<%= user._id %>/workouts">
-          <div class="view-workouts-text">View My Workouts</div>
-        </a>
+    <div class="home-nav-container">
+      <a class="view-workouts-link" href="/users/<%= user._id %>/workouts">
+        <div class="view-workouts-text">View My Workouts</div>
+      </a>
 
-        <a class="sign-out-link" href="/auth/sign-out">
-          <div class="sign-out-text">Sign Out</div>
-        </a>
-      </div>
+      <a class="sign-out-link" href="/auth/sign-out">
+        <div class="sign-out-text">Sign Out</div>
+      </a>
+    </div>
 
-          <h1><%= user.username %>, welcome to TriTracker!</h1>
-      <br />
-      <h3>Your Triathlon Journey Begins Here!</h3>
-      <% } else {%>
+    <h1><%= user.username %>, welcome to TriTracker!</h1>
+    <br />
+    <h3>Your Triathlon Journey Begins Here!</h3>
+    <% } else {%>
     <h1>Welcome to TriTracker!</h1>
     <br />
     <h3>Start Tracking Your Journey</h3>
