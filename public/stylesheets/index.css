@@ -47,12 +47,12 @@ h1 {
   text-decoration: none;
 }
 
-.workout-title-text {
-  transition: ease-in-out(0.25s);
+.workout-title-link:hover {
+  text-decoration: 1.5px solid white underline;
 }
 
-.workout-title-text:hover {
-  transform: skew(-3deg, 3deg);
+.workout-title-text {
+  transition: ease-in-out(0.25s);
 }
 
 li {

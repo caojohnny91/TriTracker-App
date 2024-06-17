@@ -59,6 +59,8 @@ h3 {
   transition: ease-in-out 0.25s;
   width: 15em;
   max-width: 200px;
+  animation: none;
+  transform: none;
 }
 
 .edit-text:hover {
