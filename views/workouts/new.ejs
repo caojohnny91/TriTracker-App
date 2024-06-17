@@ -10,7 +10,7 @@
   </head>
   <body>
         <!-- need "My Workouts" button on nav bar for edit page and new page -->
-    <%- include('../partials/_navbar.ejs') %>
+    <%- include('../partials/_newPageNavbar.ejs') %>
     <div class="icon-container">
       <div class="swim-icon">
         <img
@@ -33,7 +33,7 @@
             
     <!-- update form request for date -->
     <div class="add-details">
-      <h1>Crushing it!</h1>
+      <h1>You're Crushing It!</h1>
       <h3>Add a New Workout</h3>
 
        <form action="/users/<%= user._id %>/workouts" method="POST">
