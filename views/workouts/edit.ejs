@@ -55,20 +55,20 @@
           <option value="Tempo" <%= workout.workoutType === "Tempo" ? "selected" : "" %>>Tempo</option>
           <option value="Interval" <%= workout.workoutType === "Interval" ? "selected" : "" %>>Interval</option>
         </select>
+        <br />
   
         <label for="time">Time (minutes):</label>
         <input type="number" name="time" step="0.001" min="0" value="<%= workout.time %>" />
   
         <label for="distance">Distance (miles):</label>
         <input type="number" name="distance" step="0.001" min="0" value="<%= workout.distance %>"/>
+        <br />
   
         <label for="notes">Notes:</label>
         <textarea name="notes" maxlength="50"><%= workout.notes %></textarea>
-
       
-      
-        </div>
-      <button type="submit">Update Workout</button>
-    </form>
+    </div>
+        <button class="update-button" type="submit">Update Workout</button>
+      </form>
   </body>
 </html>
