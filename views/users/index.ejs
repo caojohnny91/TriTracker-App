@@ -31,23 +31,24 @@
         </div>
       </div>
 
-
-      
       
       <div class="users-list">
         <h1>TriTracker Community</h1>
     
-        <h3>Click on their name to view workouts</h3>
-        <ul>
-          <% users.forEach(user => { %>
-          <li>
-            <a class="user-name-link" href="/users/<%= user._id %>">
-                <div class="user-name-text"><%= user.username %></div>
-            </a>
-          </li>
-          <% }); %>
-        </ul>
+        <h3>Because We're Stronger Together!</h3>
+        <div class="users-container">
+          <ul>
+            <% users.forEach(user => { %>
+            <li>
+              <a class="user-name-link" href="/users/<%= user._id %>">
+                  <div class="user-name-text"><%= user.username %></div>
+              </a>
+            </li>
+            <% }); %>
+          </ul>
 
-    </div>
+        </div>
+
+      </div>
   </body>
 </html>
