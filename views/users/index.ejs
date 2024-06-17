@@ -4,21 +4,50 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/stylesheets/mult-pages.css" />
-    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <link rel="stylesheet" href="/stylesheets/community.css" />
 
     <title>Community</title>
   </head>
   <body>
     <%- include('../partials/_communityIndexNavBar.ejs') %>
 
-    <h1>TriTracker Community</h1>
+    <div class="icon-container">
+        <div class="swim-icon">
+          <img
+            class="swim-pic-icon"
+            src="/icon-pics/swim.png"
+            alt="swim picture"
+          />
+        </div>
+        <div class="bike-icon">
+          <img
+            class="run-pic-icon"
+            src="/icon-pics/bike.png"
+            alt="bike picture"
+          />
+        </div>
+        <div class="run-icon">
+          <img class="run-pic-icon" src="/icon-pics/run.png" alt="run picture" />
+        </div>
+      </div>
 
-    <ul>
-      <% users.forEach(user => { %>
-      <li>
-        <a href="/users/<%= user._id %>"><%= user.username %></a>
-      </li>
-      <% }); %>
-    </ul>
+
+      
+      
+      <div class="users-list">
+        <h1>TriTracker Community</h1>
+    
+        <h3>Click on their name to view workouts</h3>
+        <ul>
+          <% users.forEach(user => { %>
+          <li>
+            <a class="user-name-link" href="/users/<%= user._id %>">
+                <div class="user-name-text"><%= user.username %></div>
+            </a>
+          </li>
+          <% }); %>
+        </ul>
+
+    </div>
   </body>
 </html>
