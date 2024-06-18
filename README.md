@@ -37,7 +37,7 @@ TriTracker also has a community page that lets you see other members and their w
 - EJS | Express | Bcrypt <br />
 - Dotenv | Express Session | Method Override <br />
 - Mongoose | Morgan | Node.js <br />
-- Heroku | Trello
+- Heroku | Trello | MongoDB
 
 ## Next Steps
 
